@@ -47,16 +47,17 @@ const weatherData = {
 // The 'weatherData' object now contains a simple structure, with arrays of datetimes and weather information
 console.log("\nHourly data:\n", weatherData.hourly)
 
+// Data for html
 const list = document.getElementById('forecast');
 list.innerHTML = '';
 
-// Data for html
 for (let i = 0; i < weatherData.hourly.time.length; i++) {
 	const li = document.createElement('li');
 	const time = weatherData.hourly.time[i];
 	const temp = weatherData.hourly.temperature_2m[i];
 	const precip = weatherData.hourly.precipitation_probability[i];
 
-	li.textContent = `${time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })} — ${temp?.toFixed(1) ?? '—'}°C — ${precip ?? 0}% precip`;
+	li.textContent = `${time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })} — ${temp?.toFixed(1) ?? '—'}°C — ${precip ?? 0}%`;
 	list.appendChild(li);
-}   
+}
+   
