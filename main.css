@@ -1,0 +1,35 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+h2 {
+  color: #aaa;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+#forecast {
+  list-style: none;
+  padding: 0;
+}
+
+#forecast li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+#forecast li:nth-child(odd) {
+  background: #222;
+}   
