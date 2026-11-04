@@ -51,6 +51,7 @@ console.log("\nHourly data:\n", weatherData.hourly)
 const list = document.getElementById('forecast');
 list.innerHTML = '';
 
+console.log('items to render:', weatherData.hourly.time.length);
 for (let i = 0; i < weatherData.hourly.time.length; i++) {
 	const li = document.createElement('li');
 	const time = weatherData.hourly.time[i];
