@@ -27,7 +27,7 @@ console.log(
 	`\nTimezone difference to GMT+0: ${utcOffsetSeconds}s`,
 );
 
-const hourly = response.hourly()!;
+const hourly = response.hourly();
 
 // Note: The order of weather variables in the URL query and the indices below need to match!
 const weatherData = {
@@ -36,11 +36,11 @@ const weatherData = {
 			{ length: (Number(hourly.timeEnd()) - Number(hourly.time())) / hourly.interval() }, 
 			(_ , i) => new Date((Number(hourly.time()) + i * hourly.interval() + utcOffsetSeconds) * 1000)
 		),
-		temperature_2m: hourly.variables(0)!.valuesArray(),
-		apparent_temperature: hourly.variables(1)!.valuesArray(),
-		precipitation_probability: hourly.variables(2)!.valuesArray(),
-		precipitation: hourly.variables(3)!.valuesArray(),
-		visibility: hourly.variables(4)!.valuesArray(),
+		temperature_2m: hourly.variables(0).valuesArray(),
+		apparent_temperature: hourly.variables(1).valuesArray(),
+		precipitation_probability: hourly.variables(2).valuesArray(),
+		precipitation: hourly.variables(3).valuesArray(),
+		visibility: hourly.variables(4).valuesArray(),
 	},
 };
 
