@@ -52,13 +52,13 @@ const list = document.getElementById('forecast');
 list.innerHTML = '';
 
 console.log('items to render:', weatherData.hourly.time.length);
-for (let i = 0; i < weatherData.hourly.time.length; i++) {
+for (let i = 0; i < 12; i++) {
 	const li = document.createElement('li');
 	const time = weatherData.hourly.time[i];
 	const temp = weatherData.hourly.temperature_2m[i];
 	const precip = weatherData.hourly.precipitation_probability[i];
 
-	li.textContent = `${time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })} — ${temp?.toFixed(1) ?? '—'}°C — ${precip ?? 0}%`;
+	li.textContent = `${time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })} — ${temp?.toFixed(1) ?? '—'}°C — ${precip ?? 0}% rain`;
 	list.appendChild(li);
 }
    
