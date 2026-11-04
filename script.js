@@ -58,7 +58,12 @@ for (let i = 0; i < 12; i++) {
 	const temp = weatherData.hourly.temperature_2m[i];
 	const precip = weatherData.hourly.precipitation_probability[i];
 
-	li.textContent = `${time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })} — ${temp?.toFixed(1) ?? '—'}°C — ${precip ?? 0}% rain`;
+	//li.textContent = `${time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })} — ${temp?.toFixed(1) ?? '—'}°C — ${precip ?? 0}% rain`;
+	li.innerHTML = `
+		<span>${time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</span>
+		<span>${temp?.toFixed(1) ?? '—'}°C</span>
+		<span>${precip ?? 0}% rain</span>
+	`;
 	list.appendChild(li);
 }
    
